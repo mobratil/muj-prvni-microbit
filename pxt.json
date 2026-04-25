@@ -4,11 +4,19 @@
     "description": "Muj prvni micro:bit projekt",
     "dependencies": {
         "core": "*",
-        "radio": "*"
+        "radio": "*",
+        "microphone": "*"
     },
     "files": [
         "main.ts",
         "main.blocks"
+    ],
+    "targetVersions": {
+        "target": "8.0.21",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
     ],
     "preferredEditor": "blocksprj"
 }
