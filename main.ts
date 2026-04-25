@@ -1,19 +1,8 @@
 let happiness = 5
 let energy = 5
 
-// Zobraz náladu mazlíčka
-function showMood () {
-    if (happiness > 7) {
-        basic.showIcon(IconNames.Happy)
-    } else if (happiness > 3) {
-        basic.showIcon(IconNames.Meh)
-    } else {
-        basic.showIcon(IconNames.Sad)
-    }
-}
-
-// Start — šťastný mazlíček
-showMood()
+// Start
+basic.showIcon(IconNames.Happy)
 
 // Tlačítko A — nakrmit
 input.onButtonPressed(Button.A, function () {
@@ -21,7 +10,13 @@ input.onButtonPressed(Button.A, function () {
     happiness = Math.min(happiness + 1, 10)
     basic.showIcon(IconNames.Heart)
     basic.pause(800)
-    showMood()
+    if (happiness > 7) {
+        basic.showIcon(IconNames.Happy)
+    } else if (happiness > 3) {
+        basic.showIcon(IconNames.Meh)
+    } else {
+        basic.showIcon(IconNames.Sad)
+    }
 })
 
 // Tlačítko B — hrát si
@@ -39,28 +34,52 @@ input.onButtonPressed(Button.B, function () {
         basic.showIcon(IconNames.Asleep)
         basic.pause(1000)
     }
-    showMood()
+    if (happiness > 7) {
+        basic.showIcon(IconNames.Happy)
+    } else if (happiness > 3) {
+        basic.showIcon(IconNames.Meh)
+    } else {
+        basic.showIcon(IconNames.Sad)
+    }
 })
 
-// Zatřesení — mazlíček se raduje
+// Zatřesení — radost
 input.onGesture(Gesture.Shake, function () {
     happiness = Math.min(happiness + 1, 10)
     music.play(music.builtinPlayableSoundEffect(soundExpression.happy), music.PlaybackMode.UntilDone)
-    showMood()
+    if (happiness > 7) {
+        basic.showIcon(IconNames.Happy)
+    } else if (happiness > 3) {
+        basic.showIcon(IconNames.Meh)
+    } else {
+        basic.showIcon(IconNames.Sad)
+    }
 })
 
-// A+B — zobraz statistiky
+// A+B — statistiky
 input.onButtonPressed(Button.AB, function () {
     basic.showString("H" + happiness)
     basic.pause(500)
     basic.showString("E" + energy)
     basic.pause(500)
-    showMood()
+    if (happiness > 7) {
+        basic.showIcon(IconNames.Happy)
+    } else if (happiness > 3) {
+        basic.showIcon(IconNames.Meh)
+    } else {
+        basic.showIcon(IconNames.Sad)
+    }
 })
 
-// Každých 30 sekund — mazlíček ztrácí náladu a energii
+// Každých 30s ztrácí náladu
 loops.everyInterval(30000, function () {
     happiness = Math.max(happiness - 1, 0)
     energy = Math.max(energy - 1, 0)
-    showMood()
+    if (happiness > 7) {
+        basic.showIcon(IconNames.Happy)
+    } else if (happiness > 3) {
+        basic.showIcon(IconNames.Meh)
+    } else {
+        basic.showIcon(IconNames.Sad)
+    }
 })
