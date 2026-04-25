@@ -8,8 +8,7 @@
         "microphone": "*"
     },
     "files": [
-        "main.ts",
-        "main.blocks"
+        "main.ts"
     ],
     "targetVersions": {
         "target": "8.0.21",
@@ -18,5 +17,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
