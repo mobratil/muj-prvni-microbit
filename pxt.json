@@ -1,0 +1,14 @@
+{
+    "name": "muj-prvni-microbit",
+    "version": "0.0.1",
+    "description": "Muj prvni micro:bit projekt",
+    "dependencies": {
+        "core": "*",
+        "radio": "*"
+    },
+    "files": [
+        "main.ts",
+        "main.blocks"
+    ],
+    "preferredEditor": "blocksprj"
+}
