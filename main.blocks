@@ -1,0 +1,19 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables></variables>
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="basic_show_string">
+        <value name="text">
+          <shadow type="text">
+            <field name="TEXT">Ahoj!</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="basic_show_icon">
+            <field name="i">IconNames.Happy</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
